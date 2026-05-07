@@ -349,7 +349,7 @@ updated: 2026-04-30
 
 | 작업 | 참조 문서 |
 |------|-----------|
-| 커밋·브랜치·PR 규칙 (브랜치 전략·네이밍·컨벤셔널 커밋·Co-Authored-By 등) | `docs/[라이브러리명]/git-workflow/branch-commit.md` |
+| 커밋·브랜치·PR 규칙 (브랜치 전략·네이밍·컨벤셔널 커밋) | `docs/[라이브러리명]/git-workflow/branch-commit.md` |
 | PR 템플릿 | `.github/PULL_REQUEST_TEMPLATE.md` (없으면 생성 검토) |
 | 릴리스 절차 | `docs/[라이브러리명]/git-workflow/release.md` 또는 `.changeset/README.md` |
 
@@ -379,7 +379,6 @@ updated: 2026-04-30
 | **브랜치 기준점** | `feature/*`·`release/*` → `develop` / `hotfix/*` → `main` | `git checkout develop && git pull` 후 분기 |
 | **커밋 메시지** | 컨벤셔널 커밋 — `<타입>(<scope>): <설명>` | `feat(button): add loading variant` |
 | **이슈·PR 제목** | `<타입>: <설명>` (스코프 선택) | `feat: add button loading variant` |
-| **Co-Authored-By** | Claude Code 작업 시 필수 | `Co-Authored-By: Claude <noreply@anthropic.com>` |
 | **릴리스** | `pnpm changeset` → `pnpm version` → `pnpm release` (Changesets 기준) | 변경마다 `.changeset/*.md` 추가 |
 
 ---
@@ -410,6 +409,6 @@ updated: 2026-04-30
 |------|------|
 | `/session-close` | 세션 종료 — HANDOFF 3종 갱신 |
 | `/project-fix` | QA·버그 이슈 → 서브이슈 생성 + 브랜치 준비 (이슈 트래커 사용 시) |
-| `/project-pr` | PR 생성 — 이슈 연결·Co-Authored-By 포함 |
+| `/project-pr` | PR 생성 — 이슈 연결 |
 | `/project-issue` | GitHub 이슈 인터랙티브 생성 (이슈 트래커 사용 시) |
 | `/document-review` | 문서 세트 시나리오 검증·이슈 수정 |
