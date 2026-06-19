@@ -28,7 +28,7 @@ Forcing one harness onto both creates noise. This harness ships only what librar
 
 ```bash
 # 1. Clone next to the harness
-git clone https://github.com/<owner>/design-harness.git ~/projects/design-harness
+git clone https://github.com/Kyungjong-kim/design-harness.git ~/projects/design-harness
 
 # 2. Install (project-local, recommended for OSS libraries)
 cd <your-library-project>

@@ -40,7 +40,7 @@
 ### 1. 하네스 클론 및 설치
 
 ```bash
-git clone https://github.com/<owner>/design-harness.git ~/projects/design-harness
+git clone https://github.com/Kyungjong-kim/design-harness.git ~/projects/design-harness
 
 # 라이브러리 프로젝트로 이동
 cd <your-library-project>
