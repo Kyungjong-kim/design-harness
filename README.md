@@ -2,7 +2,7 @@
 
 Claude Code harness for **React component libraries / design systems** (npm publish targets, `dist/` consumed by external apps).
 
-> Sister project of [`claude-code-harness`](https://github.com/kyungjongKim/claude-code-harness) (the app-focused harness).
+> Sister project of [`claude-code-harness`](https://github.com/Kyungjong-kim/claude-code-harness) (the app-focused harness).
 > Use this harness when your project is a library — not a Next.js / Vite app.
 
 For Korean documentation see [README.ko.md](./README.ko.md).
@@ -38,6 +38,14 @@ bash ~/projects/design-harness/install.sh --local
 claude
 > /project-init
 ```
+
+**Windows native (PowerShell):** use `install.ps1` instead of `bash install.sh` (same flags: `-Local`, `-Personal`, `-Yes`, `-Force`).
+
+```powershell
+powershell -ExecutionPolicy Bypass -File ~\projects\design-harness\install.ps1 -Local
+```
+
+> 🧪 Native Windows support is **experimental** — `install.ps1` is a 1:1 port of `install.sh` (real `python` detection over the Windows Store stub, `robocopy` instead of `cp`/`rm`, UTF-8 BOM). Verified in a temp-dir dry run; full real-environment validation is in progress. Use WSL2 for a fully tested path.
 
 `/project-init` will analyze your library (build tool, peerDeps, exports), ask a few questions, and generate `CLAUDE.md`, `docs/<library>/`, custom agents, and Git workflow docs tailored to library work.
 

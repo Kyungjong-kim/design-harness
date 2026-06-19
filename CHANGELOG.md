@@ -1,6 +1,6 @@
 ---
 tags: [design-harness, changelog]
-updated: 2026-04-30
+updated: 2026-06-19
 ---
 
 # CHANGELOG
@@ -8,6 +8,17 @@ updated: 2026-04-30
 design-harness 문서·스킬·스크립트의 주요 변경 이력.
 
 ---
+
+## 2026-06-19 (v0.3.0 — Windows 네이티브 설치기 install.ps1)
+
+> claude-code-harness의 검증된 PowerShell 포팅을 design-harness에 적용. install.sh가 동일하므로 같은 ps1을 사용.
+
+### 추가 — `install.ps1` (install.sh의 PS 5.1 1:1 포팅)
+
+- 실제 `python` 탐지(Windows Store `python3` 스텁 회피), `cp`/`rm` 대신 `robocopy /MIR`, UTF-8 BOM, 임시 `.py` + 인자 전달로 한글 경로 보존
+- 플래그: `-Local`·`-Personal`·`-Hooks`·`-Force`·`-Yes`·`-Dir`
+- 🧪 실험적 — 임시 디렉터리 dry run 확인, 실환경 Windows 검증 진행 중. 완전 검증 경로는 WSL2
+- README en/ko에 Windows native 부트스트랩 안내 추가
 
 ## 2026-04-30 (2차 — v0.2.0 — 라이브러리 전용 템플릿·가이드·예시 완성)
 

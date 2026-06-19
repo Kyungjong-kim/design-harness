@@ -2,7 +2,7 @@
 
 **React 컴포넌트 라이브러리 / 디자인시스템** 전용 Claude Code 하네스. npm publish 대상 라이브러리(`dist/` 산출물을 외부 앱이 소비)에 맞춰 만들어진 워크플로우.
 
-> 자매 프로젝트 [`claude-code-harness`](https://github.com/kyungjongKim/claude-code-harness)는 **앱(Next.js / Vite / FastAPI 등) 전용**.
+> 자매 프로젝트 [`claude-code-harness`](https://github.com/Kyungjong-kim/claude-code-harness)는 **앱(Next.js / Vite / FastAPI 등) 전용**.
 > 라이브러리·디자인시스템 프로젝트라면 본 하네스를 사용하세요.
 
 ---
@@ -51,6 +51,14 @@ bash ~/projects/design-harness/install.sh --local
 # 또는 전역 설치 (개인 환경에서 여러 라이브러리 작업)
 bash ~/projects/design-harness/install.sh
 ```
+
+**Windows native (PowerShell):** `bash install.sh` 대신 `install.ps1` 사용 (플래그 동일: `-Local`·`-Personal`·`-Yes`·`-Force`).
+
+```powershell
+powershell -ExecutionPolicy Bypass -File ~\projects\design-harness\install.ps1 -Local
+```
+
+> 🧪 native Windows 지원은 **실험적**입니다 — `install.ps1`은 `install.sh`의 1:1 포팅(Windows Store `python3` 스텁 회피·실제 `python` 탐지, `cp`/`rm` 대신 `robocopy`, UTF-8 BOM). 임시 디렉터리 dry run으로 확인했으나 실환경 검증은 진행 중. 완전 검증 경로는 WSL2.
 
 ### 2. Claude Code 실행 후 부트스트랩
 
