@@ -239,3 +239,39 @@ pnpm storybook  # 사용자 직접 확인 (localhost:6006)
 - ❌ FE_*.md 페이지 문서 (`pages/` 폴더 미사용)
 - ❌ 모든 컴포넌트마다 `components/<...>.md` 작성 (복잡한 것만)
 - ❌ 이슈 번호 강제 (트래커 미도입 → 비활성)
+
+---
+
+## 8. 2차 적용 — 문서 트리·Storybook 정비 (성숙 단계)
+
+컴포넌트가 60여 개로 늘고 외부 노출(채용·동료)을 의식하면서 `acme-ui`가 거친 다음 단계. design-harness에 이를 위한 자산을 추가했다.
+
+### 8-1. 디자인시스템 문서 트리 도입
+
+`agent/design-system.md` 단일 파일이 토큰·컴포넌트·패턴을 다 떠안아 비대해지자, 캐노니컬 트리로 분리:
+
+```
+docs/design-system/
+├── foundation/   # principles·color·typography·layout-grid·motion·a11y
+├── tokens/       # _convention·core·semantic
+├── components/   # 컴포넌트별 Props·예제·when-to-use
+└── patterns/     # form/list/detail-layout·empty-state·confirm-modal·error-handling
+```
+
+- `agent/design-system.md`는 **quickref로 축소**(토큰·variant·절차), 상세 사양·원칙은 트리로.
+- `CLAUDE.md` 진입 문서맵 + 갱신 트리거에 트리 배선 — "새 컴포넌트 추가 시 `components/<name>.md` 기재".
+- 골격·작성 원칙: design-harness `템플릿/디자인시스템_문서트리_템플릿.md`.
+
+### 8-2. Storybook 정비
+
+사이드바 카테고리 난립(`Form`·`Input`·`Display`·`Data Display` 중복)을 **고정 8종**으로 통일 + storySort 순서 고정 + autodocs 전수 적용 + MDX 랜딩(Welcome·DesignTokens·Conventions) 최신화.
+
+- autodocs Docs 페이지 = 전 변형 + 자동 Props 표 + a11y 가 한 페이지 → **별도 인앱 쇼케이스 불필요**(표준 도구로 해결, 채용 인지도 유리).
+- 함정 1건: 컴포넌트가 `<table>`로 렌더되면(달력 등) Docs 페이지에서 마크다운 표용 전역 CSS가 셀에 누수 → `.docs-story` 내부 table 제외로 해결.
+- 절차·체크리스트: design-harness `Storybook_정비_가이드.md`.
+
+### 8-3. 자가평가 게이트
+
+대량 이식(범용 컴포넌트 11종) 후 `code-reviewer`로 1회 자가평가 — a11y 블로커(listbox 접근명·option 직계자식·progressbar role·radiogroup 키보드 트랩) 다수 발견·보강 후 커밋. **빌드·테스트 통과 ≠ a11y 완결**임을 확인.
+
+> 교훈: 라이브러리 성숙기에는 "컴포넌트 추가"보다 **정보 구조(문서 트리)·시각 카탈로그(Storybook 정비)·접근성 검수**가 신뢰도를 좌우한다. 1차(§1~7)가 "동작하는 하네스"라면 2차는 "외부자에게 보이는 하네스".

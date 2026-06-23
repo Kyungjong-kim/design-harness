@@ -1,11 +1,32 @@
 ---
 tags: [design-harness, changelog]
-updated: 2026-06-19
+updated: 2026-06-23
 ---
 
 # CHANGELOG
 
 design-harness 문서·스킬·스크립트의 주요 변경 이력.
+
+---
+
+## 2026-06-23 (v0.3.1 — 성숙 단계 자산: 문서 트리·Storybook 정비)
+
+> 라이브러리 성숙기(컴포넌트 60+·외부 노출)에 필요한 "정보 구조·시각 카탈로그·접근성" 자산을 추가. 실제 적용(`acme-ui` 2차)에서 도출.
+
+### 신규 — `Claude Code/템플릿/디자인시스템_문서트리_템플릿.md`
+
+- `docs/design-system/` 캐노니컬 트리 골격(foundation·tokens·components·patterns) + SoT 규칙 + 작성 원칙 + 마스킹 절차
+- `agent/design-system.md`(quickref)와의 분리 기준, CLAUDE.md 하네스 배선 안내
+
+### 신규 — `Claude Code/Storybook_정비_가이드.md`
+
+- 카테고리 택소노미 고정·storySort·autodocs 전수·MDX 랜딩 체크리스트
+- 함정: 컴포넌트 `<table>` 렌더 시 Docs 페이지 마크다운 표 CSS 누수 → `.docs-story` 제외 해결
+- autodocs = "한눈에 보기" 갤러리 → 별도 인앱 쇼케이스 불필요 명시
+
+### 갱신 — `examples/ui-kit-case.md`
+
+- §8 "2차 적용 — 문서 트리·Storybook 정비" 추가: 성숙 단계 워크플로우 + 자가평가 게이트(a11y 블로커 보강) 교훈
 
 ---
 
